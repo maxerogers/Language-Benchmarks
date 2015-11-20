@@ -18,7 +18,7 @@ var fib = function(n) {
 var startDate = new Date();
 var startTime = startDate.getTime();
 
-console.log(fib(30));
+console.log(fib(40));
 
 var endDate = new Date();
 var endTime = endDate.getTime();

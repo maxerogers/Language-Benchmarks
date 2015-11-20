@@ -11,5 +11,4 @@ def fib(n)
   end
 end
 
-# calculate pi to 10k digits
-puts Benchmark.measure { fib(30) }
+puts Benchmark.measure { fib(40) }
