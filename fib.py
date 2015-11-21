@@ -1,4 +1,6 @@
 
+import time
+
 def fib(n):
     if n <= 0:
         return 0
@@ -7,8 +9,7 @@ def fib(n):
     else:
         return fib(n-2) + fib(n-1)
 
-print(fib(33))
-
-# if __name__ == '__main__':
-#     import timeit
-#     print(timeit.timeit("test()", setup="from __main__ import test"))
+start = time.time()
+print(fib(30))
+end = time.time()
+print end - start

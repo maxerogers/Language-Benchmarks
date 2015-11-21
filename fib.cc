@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include <time.h>
+//Max Rogers
+//fib.cc
+#include <iostream>
 
 int fib(int n) {
   if (n <= 0) {
@@ -11,15 +12,11 @@ int fib(int n) {
   }
 }
 
-int main(void) {
+int main() {
   double startTime = (double)clock()/CLOCKS_PER_SEC;
-
-  /* Do work */
-  printf("Fibonacci 30: %d \n", fib(30));
-
+  std::cout << "Fibonacci (30): " << fib(30) << std::endl;
   double endTime = (double)clock()/CLOCKS_PER_SEC;
-
   double timeElapsed = endTime - startTime;
-  printf("Time elapsed: %f \n", timeElapsed);
+  std::cout << "Time elapsed: " << timeElapsed << std::endl;
   return 0;
 }

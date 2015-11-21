@@ -1,5 +1,5 @@
 //
-//  fib.swift
+//  memo_fib.swift
 //  SwiftFibBenchmark
 //
 //  Created by Max Rogers on 11/17/15.
@@ -15,14 +15,20 @@ func printTimeElapsedWhenRunningCode(title:String, operation:()->()) {
     print("Time elapsed for \(title): \(timeElapsed) s")
 }
 
+var memo = [Int: Int]()
+
 func fib(n: Int) -> Int {
-    if n <= 0 {
-        return 0
-    } else if n == 1 {
-        return 1
-    } else {
-        return fib(n-2) + fib(n-1)
-    }
+  if let x = memo[n] {
+    return x
+  }
+  if n <= 0 {
+    memo[n] = 0
+  } else if n == 1 {
+    memo[n] = 1
+  } else {
+    memo[n] = fib(n-2) + fib(n-1)
+  }
+  return memo[n]!
 }
 
 printTimeElapsedWhenRunningCode("Fibonacci",operation: {fib(30)})
