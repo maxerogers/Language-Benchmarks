@@ -5,7 +5,7 @@ $memo = {}
 
 def fib(n)
   return $memo[n] if $memo[n]
-  if n <=0
+  if n <= 0
     result = 0
   elsif n <= 2
     result = 1

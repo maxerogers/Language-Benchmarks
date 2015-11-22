@@ -12,10 +12,12 @@ var fib = function(n) {
 var startDate = new Date();
 var startTime = startDate.getTime();
 
-console.log(fib(40));
+var n = 30;
+if (n) {
+  n = process.argv[2]
+}
+var x = fib(n)
 
 var endDate = new Date();
 var endTime = endDate.getTime();
-console.log((endTime-startTime) / 1000);
-
-//current best time 0.029 seconds
+console.log("JAVASCRIPT\tFibonacci:\t"+x+"\tExecTime: "+(endTime-startTime) / 1000+"s\tn:"+n);

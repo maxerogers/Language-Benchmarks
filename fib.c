@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
 int fib(int n) {
@@ -11,15 +12,18 @@ int fib(int n) {
   }
 }
 
-int main(void) {
+int main(int argc, char *argv[]) {
   double startTime = (double)clock()/CLOCKS_PER_SEC;
+  int n = 30;
 
-  /* Do work */
-  printf("Fibonacci 30: %d \n", fib(30));
+  if (argc > 1) {
+    n = atoi(argv[1]);
+  }
 
+  int x = fib(n);
   double endTime = (double)clock()/CLOCKS_PER_SEC;
-
   double timeElapsed = endTime - startTime;
-  printf("Time elapsed: %f \n", timeElapsed);
+
+  printf("C\tFibonacci:\t%d\tExecTime: %.2Es \tn:%d\n", x, timeElapsed, n);
   return 0;
 }

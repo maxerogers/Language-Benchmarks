@@ -8,15 +8,6 @@
 
 import Foundation
 
-func printTimeElapsedWhenRunningCode(title:String, operation:()->()) {
-    let startTime = CFAbsoluteTimeGetCurrent()
-    operation()
-    let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-    print("Time elapsed for \(title): \(timeElapsed) s")
-}
-
-var memo = [Int: Int]()
-
 func fib(n: Int) -> Int {
   if let x = memo[n] {
     return x
@@ -31,4 +22,16 @@ func fib(n: Int) -> Int {
   return memo[n]!
 }
 
-printTimeElapsedWhenRunningCode("Fibonacci",operation: {fib(30)})
+var memo = [Int: Int]()
+var n = 30
+if Process.arguments.count > 1 {
+    n = Int(Process.arguments[1])!
+}
+let startTime = CFAbsoluteTimeGetCurrent()
+let x = fib(n)
+let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+let numberFormatter = NSNumberFormatter()
+numberFormatter.numberStyle = NSNumberFormatterStyle.ScientificStyle
+numberFormatter.maximumSignificantDigits = 3
+let timeString = numberFormatter.stringFromNumber(timeElapsed)
+print("SWIFT\tMemo Fibonacci:\t\(x)\tExecTime: \(timeString!)s\tn:\(n)")

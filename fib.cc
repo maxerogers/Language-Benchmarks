@@ -12,11 +12,16 @@ int fib(int n) {
   }
 }
 
-int main() {
+int main(int argc, char *argv[]) {
   double startTime = (double)clock()/CLOCKS_PER_SEC;
-  std::cout << "Fibonacci (30): " << fib(30) << std::endl;
+  int n = 30;
+
+  if (argc > 1) {
+    n = std::stoi(argv[1]);
+  }
+  int x = fib(n);
   double endTime = (double)clock()/CLOCKS_PER_SEC;
   double timeElapsed = endTime - startTime;
-  std::cout << "Time elapsed: " << timeElapsed << std::endl;
+  printf("C++\tFibonacci:\t%d\tExecTime: %.2Es \tn:%d\n", x, timeElapsed, n);
   return 0;
 }
