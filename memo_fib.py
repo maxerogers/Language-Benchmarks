@@ -1,4 +1,4 @@
-
+import sys
 import time
 
 memo = {}
@@ -9,7 +9,7 @@ def fib(n):
     if n <= 0:
         memo[n] = 0
         return memo[n]
-    elif n == 1:
+    elif n <= 2:
         memo[n] = 1
         return memo[n]
     else:
@@ -17,6 +17,10 @@ def fib(n):
         return memo[n]
 
 start = time.time()
-print(fib(30))
+n = 30
+if sys.argv[1] != '':
+    n = int(sys.argv[1])
+
+x = fib(n)
 end = time.time()
-print end - start
+print "PYTHON\tMemo Fibonacci:\t{} \tExecTime: {:.2E}s\tn:{}".format(x, end - start,n)

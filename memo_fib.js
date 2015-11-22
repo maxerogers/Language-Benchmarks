@@ -6,7 +6,7 @@ var fib = function(n) {
   } else if (n <= 0) {
     memo[n] = 0
     return 0;
-  } else if (n == 1) {
+  } else if (n <= 2) {
     memo[n] = 1
     return 1;
   } else {

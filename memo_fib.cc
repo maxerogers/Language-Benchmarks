@@ -20,8 +20,8 @@ int fib(int n) {
   }
   if (n <= 0) {
     return memo[0];
-  } else if (n == 1) {
-    memo.insert ( std::pair<int,int>(1,1) );
+  } else if (n <= 2) {
+    memo.insert ( std::pair<int,int>(n,1) );
     return memo[1];
   } else {
     memo.insert ( std::pair<int,int>(n,fib(n-2) + fib(n-1)) );

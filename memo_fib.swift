@@ -23,7 +23,7 @@ func fib(n: Int) -> Int {
   }
   if n <= 0 {
     memo[n] = 0
-  } else if n == 1 {
+  } else if n <= 2 {
     memo[n] = 1
   } else {
     memo[n] = fib(n-2) + fib(n-1)
