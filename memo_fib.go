@@ -2,6 +2,9 @@ package main
 
 import "fmt"
 import "time"
+import "os"
+import "strconv"
+import "math"
 
 var memo map[int]int
 
@@ -22,10 +25,15 @@ func Fib(n int) int {
 }
 
 func main() {
+  n := 30
+  if len(os.Args) > 1 {
+    n, _ = strconv.Atoi(os.Args[1])
+  }
+
   timestart := time.Now()
   memo = make(map[int]int)
   memo[0] = 0
-  fmt.Printf("%v\n",Fib(30))
+  x := Fib(n)
   timeend := time.Now()
-  fmt.Print(timeend.Sub(timestart))
+  fmt.Printf("GO\tMemo Fibonacci:\t%d\tExecTime: %.2Es\tn:%d",x, float64(timeend.Sub(timestart).Nanoseconds()) * math.Pow10(-9),n);
 }

@@ -18,7 +18,10 @@ puts `swift fib.swift 30`
 puts `swift memo_fib.swift 30`
 
 puts `gcc fib.c && ./a.out 30`
-puts `gcc memo_fib.c && ./a.out 30`
+# puts `gcc memo_fib.c && ./a.out 30`
 
 puts `g++ fib.cc && ./a.out 30`
 puts `g++ memo_fib.cc && ./a.out 30`
+
+puts `go run fib.go 30`
+puts `go run memo_fib.go 30`
