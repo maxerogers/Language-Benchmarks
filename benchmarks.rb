@@ -23,5 +23,14 @@ puts `gcc fib.c && ./a.out 30`
 puts `g++ fib.cc && ./a.out 30`
 puts `g++ memo_fib.cc && ./a.out 30`
 
+puts `clang fib.m -lobjc -framework Foundation && ./a.out 30`
+puts `clang memo_fib.m -lobjc -framework Foundation && ./a.out 30`
+
 puts `go run fib.go 30`
 puts `go run memo_fib.go 30`
+
+# 
+# puts `swift fib.swift 40`
+# puts `swift memo_fib.swift 40`
+# puts `clang fib.m -lobjc -framework Foundation && ./a.out 40`
+# puts `clang memo_fib.m -lobjc -framework Foundation && ./a.out 40`
