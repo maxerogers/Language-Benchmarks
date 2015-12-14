@@ -14,8 +14,8 @@ puts `ruby memo_fib.rb 30`
 puts `python fib.py 30`
 puts `python memo_fib.py 30`
 
-puts `swift fib.swift 30`
-puts `swift memo_fib.swift 30`
+puts `xcrun -sdk macosx swiftc fib.swift -O -o fib_swift && ./fib_swift 30`
+puts `xcrun -sdk macosx swiftc memo_fib.swift -O -o memo_fib_swift && ./memo_fib_swift 30`
 
 puts `gcc fib.c && ./a.out 30`
 # puts `gcc memo_fib.c && ./a.out 30`
@@ -29,7 +29,7 @@ puts `clang memo_fib.m -lobjc -framework Foundation && ./a.out 30`
 puts `go run fib.go 30`
 puts `go run memo_fib.go 30`
 
-# 
+#
 # puts `swift fib.swift 40`
 # puts `swift memo_fib.swift 40`
 # puts `clang fib.m -lobjc -framework Foundation && ./a.out 40`
