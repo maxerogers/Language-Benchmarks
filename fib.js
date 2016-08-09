@@ -20,4 +20,4 @@ var x = fib(n)
 
 var endDate = new Date();
 var endTime = endDate.getTime();
-console.log("JAVASCRIPT\tFibonacci:\t"+x+"\tExecTime: "+(endTime-startTime) / 1000+"s\tn:"+n);
+console.log("JS\tFibonacci:\t"+x+"\tExecTime: "+(endTime-startTime) / 1000+"s\tn:"+n);

@@ -14,7 +14,7 @@ func fib(n: Int) -> Int {
     } else if n <= 2 {
         return 1
     } else {
-        return fib(n-2) + fib(n-1)
+        return fib(n:n-2) + fib(n:n-1)
     }
 }
 
@@ -23,10 +23,10 @@ if Process.arguments.count > 1 {
     n = Int(Process.arguments[1])!
 }
 let startTime = CFAbsoluteTimeGetCurrent()
-let x = fib(n)
+let x = fib(n:n)
 let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-let numberFormatter = NSNumberFormatter()
-numberFormatter.numberStyle = NSNumberFormatterStyle.ScientificStyle
+let numberFormatter = NumberFormatter()
+numberFormatter.numberStyle = NumberFormatter.Style.scientific
 numberFormatter.maximumSignificantDigits = 3
-let timeString = numberFormatter.stringFromNumber(timeElapsed)
+let timeString = numberFormatter.string(from:timeElapsed)
 print("SWIFT\tFibonacci:\t\(x)\tExecTime: \(timeString!)s\tn:\(n)")
