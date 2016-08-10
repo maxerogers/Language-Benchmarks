@@ -1,33 +1,36 @@
 #!/usr/bin/env ruby
-puts "Language Benchmark Research"
+n = 30
+n = ARGV.first.to_i if ARGV.first
 
-puts `node fib.js 30`
-puts `node memo_fib.js 30`
+puts "Language Benchmark Research: n=#{n}"
 
-puts `javac Fib.java && java Fib 30`
-puts `javac MemoFib.java && java MemoFib 30`
+puts `node fib.js #{n}`
+puts `node memo_fib.js #{n}`
+
+puts `javac Fib.java && java Fib #{n}`
+puts `javac MemoFib.java && java MemoFib #{n}`
 # puts `javac Fib.java && java Fib 50`
 # puts `javac MemoFib.java && java MemoFib 50`
-puts `ruby fib.rb 30`
-puts `ruby memo_fib.rb 30`
+puts `ruby fib.rb #{n}`
+puts `ruby memo_fib.rb #{n}`
 
-puts `python fib.py 30`
-puts `python memo_fib.py 30`
+puts `python fib.py #{n}`
+puts `python memo_fib.py #{n}`
 
-puts `xcrun -sdk macosx swiftc fib.swift -O -o fib_swift.out && ./fib_swift.out 30`
-puts `xcrun -sdk macosx swiftc memo_fib.swift -O -o memo_fib_swift.out && ./memo_fib_swift.out 30`
+puts `xcrun -sdk macosx swiftc fib.swift -O -o fib_swift.out && ./fib_swift.out #{n}`
+puts `xcrun -sdk macosx swiftc memo_fib.swift -O -o memo_fib_swift.out && ./memo_fib_swift.out #{n}`
 
-puts `gcc fib.c && ./a.out 30`
+puts `gcc fib.c && ./a.out #{n}`
 # puts `gcc memo_fib.c && ./a.out 30`
 
-puts `g++ fib.cc && ./a.out 30`
-puts `g++ memo_fib.cc && ./a.out 30`
+puts `g++ fib.cc && ./a.out #{n}`
+puts `g++ memo_fib.cc && ./a.out #{n}`
 
-puts `clang fib.m -lobjc -framework Foundation && ./a.out 30`
-puts `clang memo_fib.m -lobjc -framework Foundation && ./a.out 30`
+puts `clang fib.m -lobjc -framework Foundation && ./a.out #{n}`
+puts `clang memo_fib.m -lobjc -framework Foundation && ./a.out #{n}`
 
-puts `go run fib.go 30`
-puts `go run memo_fib.go 30`
+puts `go run fib.go #{n}`
+puts `go run memo_fib.go #{n}`
 
 #
 # puts `swift fib.swift 40`
